@@ -1,0 +1,107 @@
+*{margin:0; padding:0;}
+
+.container{
+    width:75%;
+    display: block;
+    margin:auto;
+    overflow:hidden;
+    position: relative;
+}
+.main{
+    background:url(logPhoto/logBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding:170px 0px;
+}
+
+.signUpSection {
+    float: left;
+    width: 50%;
+    background: #841b13ad;
+    box-sizing: border-box;
+    padding: 50px;
+    position: absolute;
+    height: 100%;
+}
+
+.formSectoin {
+    float: right;
+    width: 50%;
+    background: white;
+    box-sizing: border-box;
+    padding: 50px;
+}
+.stitle h1 {color: white;font-size: 45px;font-family: cursive;text-align: center;}
+
+.swrapper p {
+    color: white;
+    font-family: arial;
+    text-align: center;
+}
+
+.lnk {
+   text-align: center;
+
+}
+
+
+
+.redirectButton {
+    color: white;
+    text-decoration: none;
+    background: #00000038;
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 2px;
+    transition:.2s;
+    -webkit-transition:.2s;
+    -moz-transition:.2s;
+    -ms-transition:.2s;
+    -o-transition:.2s;
+}
+
+.redirectButton:hover {
+    color:red;
+   
+}
+
+/* form */
+
+.ftitle h1 {
+    font-family: cursive;
+    text-align: center;
+    font-size: 45px;
+}
+
+.logInfo {text-align: center;}
+
+.logInfo input {
+    margin: 7px 0px;
+    padding: 10px;
+    width: 300px;
+    background: gainsboro;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+.last {
+    float: right;
+    color: #6a1814;
+}
+
+input.logBtn {
+    font-weight: bold;
+    color: white;
+    background: #9a1f16fa;
+    width: 220px;
+    transition:.2s;
+    -webkit-transition:.2s;
+    -moz-transition:.2s;
+    -ms-transition:.2s;
+    -o-transition:.2s;
+}
+
+input.logBtn:hover {
+    width:240px;
+}

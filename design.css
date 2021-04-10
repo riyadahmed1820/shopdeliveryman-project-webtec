@@ -1,0 +1,93 @@
+
+*{margin:0; padding:0;}
+
+#primeHeader{
+    background:url("photo/mian BG.jpg");
+    padding: 80px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+tbody{
+    text-align: left;
+}
+
+
+.container{
+    width: 1140px;
+    margin:auto;
+    display:block;
+}
+.loginPage {
+    /* overflow: hidden; */
+}
+.wrapper {
+    background: #ffffffc4;
+    box-shadow: 4px 5px 9px 0px #000000ba;
+    width: 70%;
+    margin: auto;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.header {
+    text-align: center;
+    font-family: arial;
+    color: #969595;
+    font-size: 18px;
+    padding: 45px 0px;
+    padding-top: 55px;
+}
+
+.sLine {
+    color: #75afbf;
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 35px 0px 0px 0px;
+}
+.formElement {
+    color: #435f6d;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+tbody.element tr {line-height: 1.8;}
+table.allInputBox {
+    margin: auto;
+}
+
+
+input {
+    padding: 4px 40px;
+    font-size: 14px;
+    margin: 3px;
+    color: #506267;
+    outline:none;
+    border-radius: 5px;
+    border: 1px solid #656f6f9e;
+}
+.submitBtn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+.submitBtn input {
+    background: #46b1d2;
+    border-radius: 33px;
+    width: 150px;
+    padding: 5px 0px;
+    font-size: 16px;
+    color: white;
+    margin: 30px 0px;
+    box-shadow: 2px 2px 8px 0px #0000009e;
+}
+
+.submitBtn input:hover {
+    background: #76c1d8;
+
+}
+
+.footer {
+    height: 150px;
+    text-align: center;
+}
