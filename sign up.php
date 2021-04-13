@@ -41,7 +41,7 @@
                                     </tr>
                                     <tr>
                                         <th><span>Password</span></th>
-                                        <th><input type="password" name="pass" value="" required></th>
+                                        <th><input type="password" name="pass" value="" reqired></th>
                                     </tr>
                                     <tr>
                                         <th><span>First Name</span></th>
@@ -76,6 +76,10 @@
 
 
                             <div class="submitBtn"><input type="submit" name="set" value="Submit"></div>
+                            
+                        </form>
+
+                        <form method="POST">
                             <div class="submitBtn"><input type="submit" name="bac" value="Back"></div>
                         </form>
                         

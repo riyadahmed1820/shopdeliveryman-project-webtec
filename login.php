@@ -10,8 +10,6 @@
 </head>
 <?php 
 	session_start();
-	/*$username=$_POST['uname'];
-	$password=$_POST['password'];*/
 	$_SESSION['username']=$_POST['uname'];
 	$_SESSION['password']=$_POST['password'];
 	
@@ -27,37 +25,43 @@
 		echo $conn1->connect_error;
 	}
 	else {
-		$sql = "SELECT * FROM user";
-		$result = $conn1->query($sql);
-	if ($result->num_rows > 0) {
+        if(isset($_POST['set']))
+        {
+		    $sql = "SELECT * FROM user";
+	    	$result = $conn1->query($sql);
+	      if ($result->num_rows > 0) {
  
- 	 while($row = $result->fetch_assoc()) {
-    //echo "User name: " . $row["uname"]. " - Password: " . $row["pass"].  "<br>";
+ 	         while($row = $result->fetch_assoc()) 
+            {
+            //echo "User name: " . $row["uname"]. " - Password: " . $row["pass"].  "<br>";
  	 
-	if($row['uname']==$_SESSION['username'] && $row['pass']== $_SESSION['password'])
-	{
-		$_SESSION['firstname']=$row['fname'];
-		$_SESSION['lastname']=$row['lname'];
-	 	$_SESSION['gender']=$row['gender'];
-		 $_SESSION['mobile']=$row['mobile'];
-		 $_SESSION['email']=$row['email'];
-		 $_SESSION['address']=$row['address'];
+	        if($row['uname']==$_SESSION['username'] && $row['pass']== $_SESSION['password'])
+	        {
+	    	$_SESSION['firstname']=$row['fname'];
+		    $_SESSION['lastname']=$row['lname'];
+	 	    $_SESSION['gender']=$row['gender'];
+		     $_SESSION['mobile']=$row['mobile'];
+		     $_SESSION['email']=$row['email'];
+		     $_SESSION['address']=$row['address'];
 
-		//echo $_SESSION['gender']; ;
-		echo "<script>location.href='index.php'</script>";
+	    	//echo $_SESSION['gender']; ;
+	    	echo "<script>location.href='index.php'</script>";
 		
-	}
-		else
-		{
-			echo "fail";
-		}
+        	}
+		    else
+		    {
+			echo "Incorret User namr or Password";
+		    }
 
-}
-	} else {
-  	echo "0 results";
-	}
-		
-	}
+            }
+	    } 
+        else {
+        	echo "0 results";
+	        }
+        
+    }}
+	
+
 
 	$conn1->close();
 
@@ -131,7 +135,7 @@
                     </tr>
 
 					<br>
-                <tr >
+                <tr>
                 <td>
                     <input class="logBtn" type="submit" name="set" value="Login">
 					<br>
@@ -141,7 +145,7 @@
 <br>
             </table>
         </fieldset>
-                <
+                
                             <br>
                             <br>
                             <br>

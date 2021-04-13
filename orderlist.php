@@ -25,7 +25,12 @@
 	if ($result->num_rows > 0) {
  
  	 while($row = $result->fetch_assoc()) {
-	
+
+       $cid=$row['cid'];
+        $oid=$row['oid'];
+        $odate=$row['orderdate'];
+        $olocation=$row['location'];
+         echo "Customer Id: " . $row["cid"]. " - Order Id : " . $row["oid"].  "<br>";
 
 }
 	}
@@ -33,39 +38,35 @@
 
 	$conn1->close();
 
-
 	?>
 <body>
     <table>                      
-           <tr>
-                <tr>
+            <tr>
+               <tr>
                     <td>
-                        First Name
+                        Order Details
+                    
+                        <input type="text" name="oid" value="">
                     </td>
-                    <td>
-                        <input type="text" name="fname" value="<?php echo $_SESSION['firstname'] ;?>" >
-                        <input type="text" name="lname" value="<?php echo $_SESSION['lastname'] ;?>" >
-                    </td>
-                </tr>
-                   
+                    </tr>
+                    <br>
+               <th><div ><a href="../fp/orderlist.php" target="_blank" name="od">details</a></div></th>
+            </tr>
+            
+</table>
+<?php
+    if(isset($_POST['od']))
+     {
+         $oid=$_POST['oid'];
+         $sq9 = "SELECT * FROM orderlist where oid ='$oid' ";
+         if ($conn1->query($sq9) === TRUE ) {
+         echo "Customer Id: " . $row["cid"]. " - Order Id : " . $row["oid"].  "<br>";
+        } else {
+         echo "Error updating record: " . $conn1->error;
+         }
+     }
 
-                <tr>
-                    <td>
-                        Last Name
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        Gender
-                    </td>
-                    <td>
-                        <input type="text" name="gender" value="<?php echo $_SESSION['gender'] ;?>">
-                    </td>
-                </tr>
+?>
 
 </body>
 </html>

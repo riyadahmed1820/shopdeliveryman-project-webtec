@@ -7,12 +7,8 @@ if(!isset($_SESSION['username']))
 ?>
 <body>
  <form method ="POST">
-<h1>Welcome <?php echo $_SESSION['username'] ;?> </h1>
+<h1>Welcome <?php echo $_SESSION['firstname'] ;?> </h1>
 
-<?php echo $_SESSION['firstname'] ;?>
-<br>
-<?php echo $_SESSION['lastname'] ;?>
-<br>
 <input type="radio" name="availability" value="Online" >  Online
 <input type="radio" name="availability" value="Offline" > Offline
 <input type="radio" name="availability" value="On Delivery" > On Delivery
