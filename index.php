@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcom</title>
+</head>
 <?php
 session_start();
 if(!isset($_SESSION['username']))
@@ -5,6 +13,7 @@ if(!isset($_SESSION['username']))
     header('location:login.php');
 }
 ?>
+
 <body>
  <form method ="POST">
 <h1>Welcome <?php echo $_SESSION['firstname'] ;?> </h1>
@@ -20,6 +29,7 @@ if(!isset($_SESSION['username']))
  <input  type="submit" name="salary" value="Salary Statment">
  </form>
 </body>
+
  <?php
  if(isset($_POST["back"]))
 {
@@ -39,5 +49,4 @@ if(isset($_POST["salary"]))
 }
 ?>
 
-
-
+</html>

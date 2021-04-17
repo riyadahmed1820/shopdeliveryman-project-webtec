@@ -50,7 +50,7 @@
                     </td>
                     </tr>
                     <br>
-               <th><div ><a href="../fp/orderlist.php" target="_blank" name="od">details</a></div></th>
+               <th><div ><a href="../fp/orderdetails.php" target="_blank" name="od">details</a></div></th>
             </tr>
             
 </table>
