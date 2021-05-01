@@ -37,6 +37,7 @@
  	 
 	        if($row['uname']==$_SESSION['username'] && $row['pass']== $_SESSION['password'])
 	        {
+             $_SESSION['ppic']=$row['propic'];
 	    	$_SESSION['firstname']=$row['fname'];
 		    $_SESSION['lastname']=$row['lname'];
 	 	    $_SESSION['gender']=$row['gender'];
@@ -113,15 +114,16 @@
             <div class="formSectoin">
                 <div class="formWrapper">
 				<body >
-    				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+    				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" onsubmit="return validate()" >
         			<h1 style="text-align: center;">Login</h1>
-        			<fieldset>
+                    <fieldset>
 				<div class="logInfo">
                 <tr>
                     <td>
                         UserName 
                     
-                        <input type="text" name="uname" value="">
+                        <input type="text" id="uname" name="uname" value=""><br>
+                        <span id="errUname" style="color: red;" ></span>
                     </td>
                     </tr>
 <br>
@@ -130,7 +132,8 @@
                         Password
                     </td>
                     <td>
-                        <input type="password" name="password" value="">
+                        <input type="password" id="password" name="password" value=""><br>
+                        <span id="errPassword" style="color: red;"></span>
                     </td>
                     </tr>
 
@@ -174,5 +177,45 @@
     echo "<script>location.href='login.php'</script>";
 }
 ?>
+<script>
+   
+    function get(id)
+    {
+        return document.getElementById(id);
+    }
+
+    function validate()
+    {
+        
+        var uname = get("uname").value;
+        var pass = get("password").value;
+        
+        var validate = true;
+        if(uname=="")
+        {
+            validate = false;
+            get("uname").focus();
+            get("errUname").innerHTML="Please Enter User Name";
+        }
+        else
+        {
+            get("errUname").innerHTML="";
+        }
+         if(pass=="")
+        {
+            validate = false;
+            get("password").focus();
+            get("errPassword").innerHTML="Please Enter Password";
+        }
+        else
+        {
+            get("errPassword").innerHTML="";
+        }
+        return validate;
+
+ 
+
+    }
+</script>
 </body>
 </html>

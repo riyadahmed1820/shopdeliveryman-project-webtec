@@ -6,67 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Lost</title>
 </head>
-<?php 
-	session_start();
-	$host = "localhost";
-	$user = "root";
-	$pass = "123";
-	$db = "demo";
 
-	$conn1 = new mysqli($host, $user, $pass, $db);
-	if($conn1->connect_error) {
-		echo "Database Connection Failed!";
-		echo "<br>";
-		echo $conn1->connect_error;
-	}
-	else {
-		$sql = "SELECT * FROM orderlist";
-		$result = $conn1->query($sql);
-	if ($result->num_rows > 0) {
- 
- 	 while($row = $result->fetch_assoc()) {
-
-       $cid=$row['cid'];
-        $oid=$row['oid'];
-        $odate=$row['orderdate'];
-        $olocation=$row['location'];
-         echo "Customer Id: " . $row["cid"]. " - Order Id : " . $row["oid"].  "<br>";
-
-}
-	}
- } 
-
-	$conn1->close();
-
-	?>
 <body>
-    <table>                      
-            <tr>
-               <tr>
-                    <td>
-                        Order Details
-                    
-                        <input type="text" name="oid" value="">
-                    </td>
-                    </tr>
-                    <br>
-               <th><div ><a href="../fp/orderdetails.php" target="_blank" name="od">details</a></div></th>
-            </tr>
-            
-</table>
-<?php
-    if(isset($_POST['od']))
-     {
-         $oid=$_POST['oid'];
-         $sq9 = "SELECT * FROM orderlist where oid ='$oid' ";
-         if ($conn1->query($sq9) === TRUE ) {
-         echo "Customer Id: " . $row["cid"]. " - Order Id : " . $row["oid"].  "<br>";
-        } else {
-         echo "Error updating record: " . $conn1->error;
-         }
-     }
+<center>
+<form>
+         <h1>Delivery List </h1>  
+<button style="center" type="button" onclick="displaydata()">Load Delivery List</button>  
+    <table id ="table">  
+    <tbody id="response">
+    
+    </tbody>            
+    </table>
+</form>
+    <h1>Order Details </h1>
 
-?>
+	<label for="searchKey">Id:</label>
+	<input type="text" name="searchKey" id="searchKey">
+
+	<button id="search" onclick="search()">Details</button>
+	<p id="p2"></p>
+
+	<br>
+	<hr>
+	<br>
+</center>
+
+<script type="text/javascript">
+        function displaydata() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200) {
+					document.getElementById("table").innerHTML = xhttp.responseText;
+				}
+			}
+
+			xhttp.open("GET", "orderdetails.php", true);
+			xhttp.send();
+		}
+        function search() {
+			var searchKey = document.getElementById("searchKey").value;
+
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200) {
+					document.getElementById("p2").innerHTML = xhttp.responseText;
+				}
+			}
+
+			xhttp.open("GET", "searchajax.php?searchKey=" + searchKey, true);
+			xhttp.send();
+		}
+       
+</script>
+
 
 </body>
 </html>

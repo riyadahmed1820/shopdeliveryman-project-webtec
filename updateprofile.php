@@ -51,7 +51,7 @@
 
 	?>
 <body>
-<form method ="POST">
+<form action="#" method="POST" onsubmit=" return formValidation()">
 
     <center>
     <h1>Change your Profile</h1>
@@ -62,7 +62,8 @@
                         First Name
                     </td>
                     <td>
-                        <input type="text" name="fname" value="<?php echo $_SESSION['firstname'] ;?>" >
+                        <input type="text" name="fname" class="firstname" value="<?php echo $_SESSION['firstname'] ;?>" >
+                        <th><span id="fname"></span></th>
                     </td>
                 </tr>
                    
@@ -72,7 +73,8 @@
                         Last Name
                     </td>
                     <td>
-                        <input type="text" name="lname" value="<?php echo $_SESSION['lastname'] ;?>" >
+                        <input type="text" name="lname" class="lastname" value="<?php echo $_SESSION['lastname'] ;?>" >
+                        <th><span id="lname"></span></th>
                     </td>
                 </tr>
 
@@ -81,7 +83,8 @@
                         Gender
                     </td>
                     <td>
-                        <input type="text" name="gender" value="<?php echo $_SESSION['gender'] ;?>">
+                        <input type="text" name="gender" class="gender" value="<?php echo $_SESSION['gender'] ;?>">
+                        <th><span id="gender"></span></th>
                     </td>
                 </tr>
 
@@ -89,14 +92,16 @@
                         UserName 
                     </td>
                     <td>
-                        <input type="text" name="uname" value="<?php echo $_SESSION['username'] ;?>">
+                        <input type="text" name="uname" class="username" value="<?php echo $_SESSION['username'] ;?>">
+                        <th><span id="uname"></span></th>
                     </td>
                     </tr>
                      <td>
                         Password
                     </td>
                     <td>
-                        <input type="text" name="pass" value="<?php echo $_SESSION['password'] ;?>">
+                        <input type="text" name="pass" class="password" value="<?php echo $_SESSION['password'] ;?>">
+                        <th><span id="pass"></span></th>
                     </td>
                     </tr>
 
@@ -104,7 +109,8 @@
                         Mobile Number  
                     </td>
                     <td>
-                        <input type="text" name="mobile" value="<?php echo $_SESSION['mobile'] ;?>">
+                        <input type="text" name="mobile" class="mobile" value="<?php echo $_SESSION['mobile'] ;?>">
+                        <th><span id="mobile"></span></th>
                     </td>
                     </tr>
 
@@ -113,7 +119,8 @@
                          Email
                     </td>
                     <td>
-                        <input type="email" name="email" id="" value="<?php echo $_SESSION['email'] ;?>">
+                        <input type="email" name="email" id="" class="email" value="<?php echo $_SESSION['email'] ;?>">
+                        <th><span id="email"></span></th>
                     </td>
                     </tr>
 
@@ -122,7 +129,8 @@
                          Address
                     </td>
                     <td>
-                        <input type="text" name="address" value="<?php echo $_SESSION['address'] ;?>">
+                        <input type="text" name="address" class="address" value="<?php echo $_SESSION['address'] ;?>">
+                        <th><span id="address"></span></th>
                     </td>
                     </tr>
 
@@ -140,5 +148,6 @@
     }
 ?>
 </from>
+<script src="script.js"></script>
 </body>
     

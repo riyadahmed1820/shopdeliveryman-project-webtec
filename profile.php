@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Profile</title>
+    <link rel="stylesheet" href="profileStyle/rowProfileStyle.css">
 </head>
 
 <?php 
@@ -14,15 +15,30 @@
 
 
 <body>
+
+<div class="container">
+
+
 <form method ="POST">
 
     <center>
     <h2>Profile</h2>
+
+    <div class="profilePhoto">
+    <img src="fp/<?=$propic['propic']?>"
+    <input type="text" name="fname" value="<?php echo $_SESSION['ppic'] ;?>" >
+    </div>
+
+
+
+    <div class="formTable">
+
+    
     <table>                      
            <tr>
                 <tr>
                     <td>
-                        First Name
+                         <span>First Name</span>
                     </td>
                     <td>
                         <input type="text" name="fname" value="<?php echo $_SESSION['firstname'] ;?>" >
@@ -32,7 +48,8 @@
 
                 <tr>
                     <td>
-                        Last Name
+                       <span>last name</span> 
+                       
                     </td>
                     <td>
                         <input type="text" name="lname" value="<?php echo $_SESSION['lastname'] ;?>" >
@@ -41,7 +58,7 @@
 
                 <tr>
                     <td>
-                        Gender
+                       <span>Gender</span> 
                     </td>
                     <td>
                         <input type="text" name="gender" value="<?php echo $_SESSION['gender'] ;?>">
@@ -49,14 +66,14 @@
                 </tr>
 
                     <td>
-                        UserName 
+                       <span>UserName</span>  
                     </td>
                     <td>
                         <input type="text" name="uname" value="<?php echo $_SESSION['username'] ;?>">
                     </td>
                     </tr>
                      <td>
-                        Password
+                        <span>Password</span> 
                     </td>
                     <td>
                         <input type="text" name="pass" value="<?php echo $_SESSION['password'] ;?>">
@@ -64,7 +81,7 @@
                     </tr>
 
                      <td>
-                        Mobile Number  
+                       <span>Mobile Number </span>   
                     </td>
                     <td>
                         <input type="text" name="uname" value="<?php echo $_SESSION['mobile'] ;?>">
@@ -73,7 +90,7 @@
 
                     <tr>
                     <td>
-                         Email
+                        <span>Email</span>  
                     </td>
                     <td>
                         <input type="email" name="email" id="" value="<?php echo $_SESSION['email'] ;?>">
@@ -82,7 +99,7 @@
 
                     <tr>
                     <td>
-                         Address
+                         <span>Address</span> 
                     </td>
                     <td>
                         <input type="text" name="address" value="<?php echo $_SESSION['address'] ;?>">
@@ -91,9 +108,19 @@
 
                     
     </table>
-    <br><br>
-    <div><a href="../fp/updateprofile.php" target="_blank"  name="updatebtn">Uptade Profile</a></div>
-    <div><a href="../fp/index.php" target="_blank" name="backbtn">back</a></div>
+ 
+
+
+    </div>
+
+       <div class="btnBox">
+
+         <div class="upDateBtn"><a href="../fp/updateprofile.php" target="_blank"  name="updatebtn">Uptade Profile</a></div>
+        <div class="back"><a href="../fp/index.php" target="_blank" name="backbtn">back</a></div>
+
+       </div>
+       <br>
+   
     <form >
     <?php
 
@@ -105,6 +132,8 @@
                     
 
 </form>
+
+</div>
     
 </body>
 </html>

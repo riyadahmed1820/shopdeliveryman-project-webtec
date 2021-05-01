@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:rgba(238, 193, 109, 0)
+    
+}
+section {
+    padding: 0px 0px;
+}
+
+.container{
+    width: 85%;
+    display:block;
+    margin:auto;
+    overflow: hidden;
+}
+
+.header{
+    display:block;
+    background: linear-gradient(#0000007a,#000000d4),url(3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0px;
+}
+.userName {
+    float: left;
+}
+
+.allButton {
+    float: right;
+}
+.userName h1 {
+    color: #fdfdfd;
+    font-size: 35px;
+    font-family: arial;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+.btn {
+    float: left;
+    margin: 35px 10px 0px 8px;
+    border: 1px solid #9c9494;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background: #00000024;
+}
+
+.btn:hover {
+    background: #00000081;
+}
+
+.body {
+    width: 100%;
+}
+
+.navigation {
+    float: left;
+    width: 20%;
+    background: #000000b0;
+    height: 800px;
+}
+
+.showProduct {
+    float: right;
+    width: 80%;
+    text-align: center;
+    background: #ddd;
+}
+
+.lastPart {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    background: #4c49496b;
+}
+
+.singleNavigationBar {
+    background: #99a1a5;
+    margin: 5px 0px;
+    padding: 8px;
+    transition:.2s;
+    -webkit-transition:.2s;
+    -moz-transition:.2s;
+    -ms-transition:.2s;
+    -o-transition:.2s;
+}
+
+.singleNavigationBar:hover {
+     transform:scale(1.05);
+     
+     -webkit-transform:scale(1.05);
+     -moz-transform:scale(1.05);
+     -ms-transform:scale(1.05);
+     -o-transform:scale(1.05);
+     -webkit-transform:scale(1.05);
+}
+
+.singleNavigationBar input {
+    outline: none;
+    border: none;
+    color: white;
+    background: #ff000000;
+}

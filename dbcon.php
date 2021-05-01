@@ -6,6 +6,7 @@
 	$pass = "123";
 	$db = "demo";
 
+	$propic=$_POST['propic'];
    	$uname=$_POST['uname'];
     $password=$_POST['password'];
     $mnumber=$_POST['mobile'];
@@ -25,7 +26,7 @@
     //insertion
 	else {
 		echo "Database Connection Successful!";
-		$stmt1 = $conn1->prepare("insert into user (uname,pass,fname,lname,address,email,gender,mobile) VALUES ('$uname','$password','$fname','$lname','$address','$email','$gender','$mnumber')");
+		$stmt1 = $conn1->prepare("insert into user (propic,uname,pass,fname,lname,address,email,gender,mobile) VALUES ('$propic','$uname','$password','$fname','$lname','$address','$email','$gender','$mnumber')");
 		}
         $status = $stmt1->execute();
 		if($status) {
@@ -44,7 +45,7 @@
 
 <form method ="POST">
  <h1 style="text-align: center;">Welcome-form</h1>
- <input  type="submit" name="back" value="Back">
+ <button type="button" name="back" value="Back"></button>
  </form>
  <?php
  if(isset($_POST["back"]))

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcom</title>
+    <link rel="stylesheet" href="indexStyle/style.css">
 </head>
 <?php
 session_start();
@@ -14,20 +15,69 @@ if(!isset($_SESSION['username']))
 }
 ?>
 
+    
 <body>
- <form method ="POST">
-<h1>Welcome <?php echo $_SESSION['firstname'] ;?> </h1>
+    <section>
+        <div class="container">
+        <form method="POST">
+            <div class="header">
+                <!-- header line -->
+                <div class="userName">
+                    <h1>Welcome <?php echo $_SESSION['firstname'] ;?> </h1>
+                </div>
+         <!-- nav bar -->
+                <div class="allButton">
 
-<input type="radio" name="availability" value="Online" >  Online
-<input type="radio" name="availability" value="Offline" > Offline
-<input type="radio" name="availability" value="On Delivery" > On Delivery
+                   <div class="btn"> <input type="radio" name="availability" value="Online"> Online </div>
+                   <div class="btn"> <input type="radio" name="availability" value="Offline"> Offline </div>
+                   <div class="btn"> <input type="radio" name="availability" value="On Delivery"> On Delivery </div>
 
-<br><br>
- <input  type="submit" name="back" value="Log Out">
- <input  type="submit" name="profile" value="Profile">
- <input  type="submit" name="orderlist" value="Order List">
- <input  type="submit" name="salary" value="Salary Statment">
- </form>
+                </div>
+
+
+            </div>
+
+            <!-- vitorer body -->
+
+            <div class="body">
+                <div class="navigation">
+
+                    
+                    <div class="singleNavigationBar">
+                        
+                        <button type="submit" name="profile" onclick="displayprofile()" >Profile</button>
+                    </div>
+                    <div class="singleNavigationBar">
+                        <button type="submit" name="orderlist">Order list</button>
+                    </div>
+                    <div class="singleNavigationBar">
+                        <button type="submit" name="salary">Salary</button>
+                    </div>
+                    <div class="singleNavigationBar">
+                        <button type="submit" name="back">Logout</button>
+                    </div>
+                    
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div id="showProduct"> </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
+
+
+            
+        </form>
+        </div>
+    </section>
+
+   
 </body>
 
  <?php
@@ -47,6 +97,20 @@ if(isset($_POST["salary"]))
 {
     echo "<script>location.href='Salary.php'</script>";
 }
+
 ?>
+<script type="text/javascript">
+        function displayprofile() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200) {
+					document.getElementById("table").innerHTML = xhttp.responseText;
+				}
+			}
+
+			xhttp.open("GET", "profile.php", true);
+			xhttp.send();
+		}
+</script>
 
 </html>

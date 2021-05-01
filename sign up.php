@@ -34,6 +34,11 @@
                                 <thead></thead>
                                 <tbody class="element">
                                     <tr>
+                                        <th><span>Profile</span></th>
+                                        <th><input type="file" name="propic" class="profilepic" value="" ></th>
+                                        <th><span id="propic"></span></th>
+                                    </tr>
+                                    <tr>
                                         <th><span>UserName</span></th>
                                         <th><input type="text" name="uname" class="username" value="" ></th>
                                         <th><span id="uname"></span></th>

@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: rgba(199, 22, 22, 0.726);
+}
+.container{
+    max-width: 1140px;
+    margin:auto;
+    display:block;
+}
+
+.container h2 {
+    color: white;
+    font-size: 35px;
+    margin: 35px 0px;
+    background: radial-gradient(#1d920f, #c0bb1e);
+}
+.profilePhoto img{
+    width:250px;
+    height:auto;
+    text-align: center;
+    border: 5px double #bcb9b9ad;
+}
+
+
+
+.formTable {
+    display: block;
+    margin: 35px 0px;
+    box-sizing: border-box;
+    padding: 49px;
+    background: #ddd;
+}
+
+.formTable span {color: #464545;}
+
+.formTable input {
+    width: 300px;
+    padding: 4px 5px;
+    border-radius: 5px;
+    outline: none;
+    
+    margin: 3px 0px;
+
+}
+
+.btnBox {
+    display: block;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.upDateBtn a ,.back a{
+    text-align: center;
+    text-decoration: none;
+    background: #03ad03;
+    color: white;
+    padding: 10px;
+    font-family: arial;
+    margin: 0px 5px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+}
+
+.upDateBtn {
+    float: left;
+}
+
+.back {
+    float: left;
+}

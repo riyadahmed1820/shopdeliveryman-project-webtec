@@ -26,16 +26,16 @@ session_start();
  
  	 while($row = $result->fetch_assoc()) {
 
-       $cid=$row['cid'];
-        $oid=$row['oid'];
-        $odate=$row['orderdate'];
-        $olocation=$row['location'];
+        echo "Customer Id: " . $row["cid"]. " - Order Id : " . $row["oid"].  "<br>";
         
-        
-
 }
 	}
- } 
+}
+
+
+
+
+	$conn1->close();
 ?>
 <body>
     

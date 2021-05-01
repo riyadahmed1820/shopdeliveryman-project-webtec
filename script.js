@@ -1,7 +1,7 @@
 function formValidation() {
 
     let uname = document.querySelector(".username");
-    let fname = document.querySelector(".firstname"); 
+    let fname = document.querySelector(".firstname");
     let lname = document.querySelector(".lastname");
     let password = document.querySelector(".password");
     let mobileNumber = document.querySelector(".mobile");
@@ -9,7 +9,7 @@ function formValidation() {
     let address = document.querySelector(".address");
 
     if (uname.value == "") {
-        document.querySelector("#uname").innerHTML = "blank is not allow!! <br>";
+        document.querySelector("#uname").innerHTML = "Please fill up Username!! <br>";
         return false;
     }
     if (isNaN(uname.value)) {
@@ -21,9 +21,9 @@ function formValidation() {
         return false;
     }
 
-   
+
     if (password.value == "") {
-        document.querySelector("#pass").innerHTML = "blank is not allow!! <br>";
+        document.querySelector("#pass").innerHTML = "Please fill up Password!! <br>";
         return false;
     }
     if ((password.value.length < 6) || (password.value.length > 15)) {
@@ -32,7 +32,7 @@ function formValidation() {
     }
 
     if (fname.value == "") {
-        document.querySelector("#fname").innerHTML = "blank is not allow!! <br>";
+        document.querySelector("#fname").innerHTML = "Please fill up Firstname!! <br>";
         return false;
     }
     if (!isNaN(fname.value)) {
@@ -45,7 +45,7 @@ function formValidation() {
     }
 
     if (lname.value == "") {
-        document.querySelector("#lname").innerHTML = "blank is not allow!! <br>";
+        document.querySelector("#lname").innerHTML = "Please fill up Lastname!! <br>";
         return false;
     }
     if (!isNaN(lname.value)) {
@@ -58,7 +58,7 @@ function formValidation() {
     }
 
     if (mobileNumber.value == "") {
-        document.querySelector("#mobile").innerHTML = "blank is not allow!! <br>";
+        document.querySelector("#mobile").innerHTML = "Please fill up Mobile Number!! <br>";
         return false;
     }
     if (mobileNumber.value.length !== 11) {
@@ -69,7 +69,7 @@ function formValidation() {
 
 
     if (email.value == "") {
-        document.querySelector("#email").innerHTML = "blank is not allow!! <br>";
+        document.querySelector("#email").innerHTML = "Please fill up Email!! <br>";
         return false;
     }
 
@@ -81,6 +81,19 @@ function formValidation() {
 
     if ((email.value.chartAt(emails.value.length - 4) != ".") && (email.value.chartAt(emails.value.length - 3) != ".")) {
         document.querySelector("#email").innerHTML = " invalid  '.' position !! <br>";
+        return false;
+    }
+
+    if (address.value == "") {
+        document.querySelector("#address").innerHTML = "Please fill up Address!! <br>";
+        return false;
+    }
+    if (!isNaN(addsree.value)) {
+        document.querySelector("#address").innerHTML = "write number only .. no letter <br>";
+        return false;
+    }
+    if ((address.value.length < 2) || (address.value.length > 20)) {
+        document.querySelector("#address").innerHTML = "write your name in 2 - 20 number <br>";
         return false;
     }
 
